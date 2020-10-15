@@ -35,5 +35,25 @@ public class MyBST<K extends Comparable<K>> {
 	public int getSize(MyBinaryNode<K> current) {
 		return (current == null) ? 0 : 1 + getSize(current.leftNode) + getSize(current.rightNode);
 	}
+	
+	public boolean search(K key) {
+		return searchBST(root, key);
+	}
+
+	/**
+	 * recursively searches node
+	 */
+	public boolean searchBST(MyBinaryNode<K> current, K key) {
+		if (current == null) {
+			return false;
+		}
+		int compareResult = key.compareTo(current.key);
+		if (compareResult == 0)
+			return true;
+		else if (compareResult < 0)
+			return searchBST(current.leftNode, key);
+		else
+			return searchBST(current.rightNode, key);
+	}
 
 }

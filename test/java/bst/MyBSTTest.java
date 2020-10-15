@@ -54,5 +54,25 @@ class MyBSTTest {
 		mybst.add(67);
 		assertEquals(13, mybst.size());
 	}
+	
+	@Test
+	void ifNodeNodePresent_shouldReturn_false() {
+		MyBST<Integer> mybst = new MyBST<>();
+		mybst.add(56);
+		mybst.add(30);
+		mybst.add(70);
+		mybst.add(22);
+		mybst.add(40);
+		mybst.add(11);
+		mybst.add(3);
+		mybst.add(16);
+		mybst.add(60);
+		mybst.add(95);
+		mybst.add(65);
+		mybst.add(63);
+		mybst.add(67);
+		assertFalse(mybst.search(100));
+		
+	}
 
 }
